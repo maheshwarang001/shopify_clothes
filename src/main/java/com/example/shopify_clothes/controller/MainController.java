@@ -200,11 +200,11 @@ public class MainController {
     @RequestMapping(value = "/admin/login",method = RequestMethod.POST )
     public String login(@RequestParam("email")String username,@RequestParam("password")String pwd){
 
-//        User admin = credential.login(username);
+        User admin = credential.login(username);
 
-//        if(admin != null && Objects.equals(admin.getPwd(), pwd) && admin.getRole() == Roles.ADMIN){
-//            return "redirect:/admin/panel";
-//        }
+        if(admin != null && Objects.equals(admin.getPwd(), pwd) && admin.getRole() == Roles.ADMIN){
+            return "redirect:/admin/panel";
+        }
         return "redirect:/admin/panel";
     }
 
